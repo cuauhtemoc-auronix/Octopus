@@ -1,0 +1,14 @@
+services:
+  datascience:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: datascience:latest
+    container_name: datascience
+    command: "/bin/bash"
+    stdin_open: true
+    tty: true
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
